@@ -1,0 +1,85 @@
+.charsheet {
+    h3 {
+        margin: 15px 0px 3px 0px;
+    }
+    
+    .sheet-table {
+        display: table;
+        font-size:.8em;
+
+        .sheet-table-row  {
+            display: table-row;
+            height:24px;
+            margin:0 0 1px 0;
+            padding:0;
+
+            .sheet-table-cell {
+                display: table-cell;
+                min-height:20px;
+                margin: 0;
+                padding:0;
+
+                input {
+                    height:20px;
+                    margin:2px 2px 2px 0;
+                }
+
+                &.sheet-power-name-header {
+                    width:210px;
+                    display:inline-block;
+                }
+        
+                &.sheet-power-domain-header {
+                    width:80px;
+                    display:inline-block;
+                }
+        
+                &.sheet-power-difficulty-header {
+                    width:35px;
+                    display:inline-block;
+                }
+
+                &.sheet-power-roll-header {
+                    width:26px;
+                    display:inline-block;
+                }
+            }
+        }
+
+        .sheet-table-header {
+            .sheet-table-row();
+            
+            text-align:center;
+
+            
+        }
+    }
+
+    .sheet-label {
+        font-weight:bold;
+    }
+
+    .sheet-gender {
+        width:30px;
+    }
+
+    .sheet-select {
+        width:80px;
+        height:20px;
+        margin:2px 2px 2px 0;
+        font-size:.8em;
+    }
+
+    .sheet-roll-button {
+        font-weight: bold;
+        text-align: right;
+        margin: 0;
+        padding: 0;
+
+        &:hover {
+            color:blue;
+        }
+    }
+
+}
+

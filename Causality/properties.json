@@ -1,0 +1,48 @@
+{
+    "points": 15,
+    "attributes": [
+        { "name": "Physique", "default":"strong" },
+        { "name": "Agility", "default":"average" },
+        { "name": "Intellect", "default":"average" },
+        { "name": "Personality", "default":"weak"},
+        { "name": "Mystic", "default":"weak"}
+    ],
+    "affinity": [
+        { "name":"Strong", "value": "strong", "roll": "4d6k3" },
+        { "name":"Average", "value":"average", "roll": "3d6"  },
+        { "name":"Weak", "value":"weak", "roll":"4d6kl3" }
+    ],
+    "skills": [
+        
+{"name":"Acrobatics", "label":"Acrobatics", "attribute":"Agility", "description":"" },
+{"name":"Bash", "label":"Bash/ Crush", "attribute":"Physique", "description":"" },
+{"name":"Diplomacy", "label":"Diplomacy", "attribute":"Personality", "description":"" },
+{"name":"Disguise", "label":"Disguise", "attribute":"Personality", "description":"" },
+{"name":"Dodge", "label":"Dodge", "attribute":"Agility", "description":"" },
+{"name":"Drive", "label":"Ride/ Drive/ Pilot", "attribute":"Agility", "description":"" },
+{"name":"Empathy", "label":"Empathy", "attribute":"Personality", "description":"" },
+{"name":"Engineering", "label":"Engineering/ Technology", "attribute":"Intellect", "description":"" },
+{"name":"Finesse", "label":"Finesse", "attribute":"Agility", "description":"" },
+{"name":"History", "label":"History", "attribute":"Intellect", "description":"" },
+{"name":"Inspite", "label":"Inspire/ Intimidate", "attribute":"Personality", "description":"" },
+{"name":"Lift", "label":"Lift/ Carry", "attribute":"Physique", "description":"" },
+{"name":"Lore", "label":"Lore", "attribute":"Intellect", "description":"" },
+{"name":"Medicine", "label":"Medicine", "attribute":"Intellect", "description":"" },
+{"name":"Melee", "label":"Melee Weapons", "attribute":"Physique", "description":"" },
+{"name":"Perception", "label":"Perception", "attribute":"Intellect", "description":"" },
+{"name":"Ranged", "label":"Ranged Weapons", "attribute":"Agility", "description":"" },
+{"name":"Stealth", "label":"Stealth", "attribute":"Agility", "description":"" },
+{"name":"Survival", "label":"Survival/ Tracking", "attribute":"Intellect", "description":"" },
+{"name":"Throw", "label":"Throw", "attribute":"Agility", "description":"" },
+{"name":"Unarmed", "label":"Unarmed Combat", "attribute":"Physique", "description":"" },
+{"name":"Will", "label":"Will", "attribute":"Intellect", "description":"" }
+    ],
+    "domains": [
+        { "name": "Air" },
+        { "name": "Dark" },
+        { "name": "Earth" },
+        { "name": "Fire" },
+        { "name": "Light" },
+        { "name": "Water" }
+    ]
+}

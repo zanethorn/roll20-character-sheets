@@ -1,0 +1,93 @@
+.charsheet h3 {
+  margin: 15px 0px 3px 0px;
+}
+.charsheet .sheet-table {
+  display: table;
+  font-size: 0.8em;
+}
+.charsheet .sheet-table .sheet-table-row {
+  display: table-row;
+  height: 24px;
+  margin: 0 0 1px 0;
+  padding: 0;
+}
+.charsheet .sheet-table .sheet-table-row .sheet-table-cell {
+  display: table-cell;
+  min-height: 20px;
+  margin: 0;
+  padding: 0;
+}
+.charsheet .sheet-table .sheet-table-row .sheet-table-cell input {
+  height: 20px;
+  margin: 2px 2px 2px 0;
+}
+.charsheet .sheet-table .sheet-table-row .sheet-table-cell.sheet-power-name-header {
+  width: 210px;
+  display: inline-block;
+}
+.charsheet .sheet-table .sheet-table-row .sheet-table-cell.sheet-power-domain-header {
+  width: 80px;
+  display: inline-block;
+}
+.charsheet .sheet-table .sheet-table-row .sheet-table-cell.sheet-power-difficulty-header {
+  width: 35px;
+  display: inline-block;
+}
+.charsheet .sheet-table .sheet-table-row .sheet-table-cell.sheet-power-roll-header {
+  width: 26px;
+  display: inline-block;
+}
+.charsheet .sheet-table .sheet-table-header {
+  display: table-row;
+  height: 24px;
+  margin: 0 0 1px 0;
+  padding: 0;
+  text-align: center;
+}
+.charsheet .sheet-table .sheet-table-header .sheet-table-cell {
+  display: table-cell;
+  min-height: 20px;
+  margin: 0;
+  padding: 0;
+}
+.charsheet .sheet-table .sheet-table-header .sheet-table-cell input {
+  height: 20px;
+  margin: 2px 2px 2px 0;
+}
+.charsheet .sheet-table .sheet-table-header .sheet-table-cell.sheet-power-name-header {
+  width: 210px;
+  display: inline-block;
+}
+.charsheet .sheet-table .sheet-table-header .sheet-table-cell.sheet-power-domain-header {
+  width: 80px;
+  display: inline-block;
+}
+.charsheet .sheet-table .sheet-table-header .sheet-table-cell.sheet-power-difficulty-header {
+  width: 35px;
+  display: inline-block;
+}
+.charsheet .sheet-table .sheet-table-header .sheet-table-cell.sheet-power-roll-header {
+  width: 26px;
+  display: inline-block;
+}
+.charsheet .sheet-label {
+  font-weight: bold;
+}
+.charsheet .sheet-gender {
+  width: 30px;
+}
+.charsheet .sheet-select {
+  width: 80px;
+  height: 20px;
+  margin: 2px 2px 2px 0;
+  font-size: 0.8em;
+}
+.charsheet .sheet-roll-button {
+  font-weight: bold;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+}
+.charsheet .sheet-roll-button:hover {
+  color: blue;
+}

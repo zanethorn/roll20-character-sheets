@@ -1,0 +1,332 @@
+{{=<% %>=}} <%!  do this because there are so many brackets in roll20 macros %>
+<div class="sheet-character_sheet">
+    <div class="sheet-region region-info">
+        <div class="sheet-name-area">
+            <span class="sheet-name-label label">Name</span>
+            <input class="sheet-name" 
+                   type="text" 
+                   name="attr_character_name" />
+
+            <span class="sheet-cp-label sheet-label">CP</span>
+            <input class="sheet-cp" 
+                   type="number" 
+                   name="attr_CharacterPoints" 
+                   value="<%points%>" />
+
+            <span class="sheet-species-label sheet-label">Species</span>
+            <input class="sheet-species" 
+                   type="text" 
+                   name="attr_Species" 
+                   placeholder="Human" 
+                   value="" />
+
+            <span class="sheet-gender-label sheet-label">Gender</span>
+            <input class="sheet-gender" 
+                   type="text" 
+                   name="attr_Gender" 
+                   value="" />
+        </div>
+
+    </div>
+    <div class='sheet-2colrow'>
+        <div class="sheet-attribute-col sheet-col">
+            <h3>Attributes</h3>
+
+            <div class="sheet-table sheet-attribute-table">
+                <div class="sheet-table-header sheet-attribute-table-header">
+                    <div class="sheet-table-cell sheet-attribute-label-header"></div>
+                    <div class="sheet-table-cell sheet-attribute-affinity-header"></div>
+                    <div class="sheet-table-cell sheet-attribute-mod-header">
+                        <span class="sheet-label">Mod.</span>
+                    </div>
+                    <div class="sheet-table-cell sheet-attribute-fatigue-header">
+                        <span class="sheet-label">Fatigue</span>
+                    </div>
+                    <div class="sheet-table-cell sheet-attribute-total-header">
+                        <span class="sheet-label">Total</span>
+                    </div>
+                    <div class="sheet-table-cell sheet-attribute-roll-header"></div>
+                </div><!-- attribute-table-header -->
+                <% #attributes %>
+                <div class="sheet-table-row sheet-<% name %>-row sheet-attribute-row">
+
+                    <div class="sheet-table-cell sheet-<% name %>-label-cell sheet-attribute-label-cell">
+                        <span class="sheet-trait-label sheet-label"><% name %></span>
+                    </div><!-- <% name %>-label-cell -->
+
+                    <div class="sheet-table-cell sheet-<% name %>-affinity-cell sheet-attribute-affinity-cell">
+                        <select name="attr_<% name %>Affinity" class="sheet-attribute-affinity sheet-<% name %>-affinity sheet-select">
+                            <option value="4d6k3">Strong</option>
+                            <option value="3d6" selected="selected">Average</option>
+                            <option value="4d6kl3">Weak</option>
+                        </select>
+                    </div><!-- <% name %>-affinity-cell -->
+
+                    <div class="sheet-table-cell sheet-<% name %>-mod-cell sheet-attribute-mod-cell">
+                        <input name="attr_<% name %>Mod" 
+                               type="number" 
+                               class="sheet-<% name %>-mod sheet-attribute-mod" 
+                               value="0" />
+                    </div><!-- sheet-<% name %>-mod-cell -->
+
+                    <div class="sheet-table-cell sheet-<% name %>-fatigue-cell sheet-attribute-fatigue-cell">
+                        <input name="attr_<% name %>Fatigue" 
+                               type="number" 
+                               class="sheet-<% name %>-fatigue sheet-attribute-fatigue" 
+                               value="0" 
+                               min="0" />
+                    </div><!-- sheet-<% name %>-fatigue-cell -->
+
+                    <div class="sheet-table-cell sheet-<% name %>-total-cell sheet-attribute-total-cell">
+                        <input name="attr_<% name %>Total" 
+                               type="number" 
+                               class="sheet-<% name %>-total sheet-attribute-total" 
+                               value="( @{<% name %>Mod} - @{<% name %>Fatigue} )" 
+                               disabled="disabled" />
+                    </div><!-- sheet-<% name %>-total-cell -->
+
+                    <div class="sheet-table-cell <% name %>-roll-cell attribute-roll-cell">
+                        <button name="roll_<% name %>Check" 
+                                type="roll" 
+                                value="&{template:default} {{name=<% name %>}} {{roll=[[ ( @{<% name %>Affinity}+@{<% name %>Total} ) ]] }}"  
+                                class="sheet-attribute-roll-button sheet-roll-button sheet-<% name %>-roll-button">
+                        </button>
+                    </div><!-- <% name %>-roll-cell -->
+
+                </div><!-- <% name %>-row -->
+                <% /attributes %>
+            </div>
+
+            <h3>Powers/ Spells</h3>
+            <div class="sheet-table sheet-domain-table">
+
+                <div class="sheet-table-header sheet-domain-table-header">
+                    <div class="sheet-table-cell sheet-domain-name-header">
+                    </div>
+                    <div class="sheet-table-cell sheet-domain-points-header">
+                        <span class="sheet-label">CP</span>
+                    </div>
+                    <div class="sheet-table-cell sheet-domain-score-header">
+                        <span class="sheet-label">Score</span>
+                    </div>
+                </div><!-- domain-table-header -->
+
+                <% #domains %>
+                <div class="sheet-table-row sheet-domain-row">
+
+                    <div class="sheet-table-cell sheet-domain-label-cell sheet-<% name %>-label-cell">
+                        <span class="sheet-domain-label sheet-label sheet-<% name %>-label"><% name %></span>
+                    </div><!-- sheet-<% name %>-label-cell -->
+
+                    <div class="sheet-table-cell sheet-domain-points-cell">
+                        <input name="attr_<% name %>Points" 
+                            type="number" 
+                            class="sheet-domain-points sheet-<% name %>-points"
+                            value="(((@{<% name %>})*(@{<% name %>}+1))/2)" 
+                            disabled="disabled" />
+                    </div><!-- <% name %>-points-cell -->
+
+                    <div class="sheet-table-cell sheet-domain-score-cell sheet-<% name %>-cell">
+                        <input name="attr_<% name %>"
+                            type="number"
+                            class="sheet-domain-ranks sheet-<% name %>-ranks"
+                            value="0"
+                            min="0" />
+                    </div><!-- <% name %>-ranks-cell -->
+
+                </div><!-- sheet-<% name %>-row -->
+                <% /domains %>
+            </div><!-- domain-table -->
+
+            <div class="sheet-table sheet-power-table">
+
+                <div class="sheet-table-header sheet-power-table-header">
+                    <span class="sheet-table-cell sheet-power-name-header"></span>
+                    <span class="sheet-table-cell sheet-power-domain-header">Domain</span>
+                    <span class="sheet-table-cell sheet-power-difficulty-header">Difficulty</span>
+                    <span class="sheet-table-cell sheet-power-roll-header"></span>
+                </div><!-- domain-table-header -->
+
+                <fieldset name="repeating_power" class="repeating_Power" >
+                    <div class="sheet-table-row sheet-power-row">
+
+                        <div class="sheet-table-cell power-name-cell" >
+                            <input name="attr_PowerName"
+                                    type="text"
+                                    class="sheet-power-name" />
+                        </div><!-- power-name-cell -->
+
+                        <div class="sheet-table-cell power-domain-cell" >
+                            <select name="attr_PowerDomain" class="sheet-power-domain sheet-select" >
+                                <% #domains %>
+                                <option value="( @{<%name%>} )"><% name %></option>
+                                <% /domains %>
+                            </select>
+                        </div><!-- power-name-cell -->
+
+                        <div class="sheet-table-cell power-difficulty-cell" >
+                            <input name="attr_PowerDifficulty"
+                                    type="number"
+                                    class="sheet-power-difficulty"
+                                    value="10" />
+                        </div><!-- power-difficulty-cell -->
+
+                        <div class="sheet-table-cell power-roll-cell">
+                            <button name="roll_#_PowerCheck" 
+                                type="roll" 
+                                class="sheet-power-roll sheet-roll-button" 
+                                value="&{template:default} {{name=@{PowerName}}} {{roll=[[ ( @{MysticAffinity} + @{PowerDomain} ) ]] }}" >
+                            </button>
+                        </div><!-- power-roll-cell -->
+
+                    </div><!-- sheet-power-row -->
+                </fieldset><!-- repeating_power -->
+
+            </div><!-- sheet-power-table -->
+
+            <h3>Equipment</h3>
+            <div class="sheet-table sheet-equipment-table">
+                <div class="sheet-table-header sheet-equipment-table-header">
+                    <span class="sheet-table-cell sheet-equipment-name-header"></span>
+                    <span class="sheet-table-cell sheet-equipment-skill-header">Skill</span>
+                    <span class="sheet-table-cell sheet-equipment-mod-header">Mod.</span>
+                    <span class="sheet-table-cell sheet-equipment-check-header"></span>
+                </div><!-- equipment-table-header -->
+
+                <fieldset name="repeating_equipment" class="repeating_Equipment" >
+                    <div class="sheet-table-row equipment-row">
+
+                        <div class="sheet-table-cell equipment-name-cell">
+                            <input name="attr_EquipmentName" 
+                                   type="text" 
+                                   class="sheet-equipment-name" />
+                        </div><!-- equipment-name-cell -->
+
+                        <div class="sheet-table-cell equipment-skill-cell">
+                            <select name="attr_EquipmentSkill" class="sheet-equipment-skill sheet-select">
+                                <% #skills %>
+                                <option value="( @{<% attribute %>Affinity}+@{<% name %>Total} )"><% label %></option>
+                                <% /skills %>
+                            </select>
+                        </div><!-- equipment-skill-cell -->
+
+                        <div class="sheet-table-cell sheet-equipment-mod-cell">
+                            <input name="attr_EquipmentMod" 
+                                   type="number" 
+                                   class="sheet-equipment-mod" 
+                                   value="0" />
+                        </div><!-- equipment-mod-cell -->
+
+                        <div class="sheet-table-cell sheet-equipment-roll-cell">
+                            <button name="roll_#_EquipmentCheck" 
+                                    type="roll" 
+                                    class="sheet-equipment-roll sheet-roll-button" 
+                                    value="&{template:default} {{name=@{EquipmentName}}} {{roll=[[ ( @{EquipmentSkill} + @{EquipmentMod} ) ]] }}" >
+                            </button>
+                        </div><!-- equipment-roll-cell -->
+
+                    </div><!-- equipment-row -->
+                </fieldset>
+            </div><!-- equipment-table -->
+
+        </div><!-- attribute-col -->
+
+        <div class="sheet-skill-col sheet-col">
+            <h3>Skills</h3>
+
+            <div class="sheet-table sheet-skill-table">
+                <div class="sheet-table-header sheet-skill-table-header">
+                    <span class="sheet-table-cell sheet-skill-label-header" ></span>
+                    <span class="sheet-table-cell sheet-skill-attribute-header" >Attribute</span>
+                    <span class="sheet-table-cell sheet-skill-points-header" >Points</span>
+                    <span class="sheet-table-cell sheet-skill-score-header" >Score</span>
+                    <span class="sheet-table-cell sheet-skill-temp-header" >Temp.</span>
+                    <span class="sheet-table-cell sheet-skill-total-header" >Total</span>
+                    <span class="sheet-table-cell sheet-skill-roll-header" ></span>
+                </div><!-- skill-table-header -->
+                <% #skills %>
+                <div class="sheet-table-row sheet-<% name %>-row sheet-skill-row">
+
+                    <div class="sheet-table-cell sheet-skill-label-cell sheet-<% name %>-label-cell">
+                        <span class="sheet-skill-label sheet-label sheet-<% name %>-label"><% label %></span>
+                    </div><!-- sheet-<% name %>-label-cell -->
+
+                    <div class="sheet-table-cell sheet-skill-affinity-cell sheet-<% name %>-affinity-cell">
+                        <span class="sheet-skill-attribute sheet-<% name %>-affinity"><% attribute %></span>
+                    </div><!-- sheet-<% name %>-affinity-cell -->
+
+                    <div class="sheet-table-cell sheet-skill-points-cell sheet-<% name %>-points-cell">
+                        <input name="attr_<% name %>Points" 
+                               type="number" 
+                               class="sheet-skill-points sheet-<% name %>-points"
+                               value="(((@{<% name %>})*(@{<% name %>}+1))/2)" 
+                               disabled="disabled" />
+                    </div><!-- sheet-<% name %>-cell -->
+
+                    <div class="sheet-table-cell sheet-skill-value-cell sheet-<% name %>-value-cell">
+                        <input name="attr_<% name %>" 
+                               type="number" 
+                               class="sheet-skill-value sheet-<% name %>-value"
+                               value="0"
+                               min="0" />
+                    </div><!-- sheet-<% name %>-value-cell -->
+
+                    <div class="sheet-table-cell sheet-skill-temp-cell sheet-<% name %>-temp-cell">
+                        <input name="attr_<% name %>Temp" 
+                               type="number" 
+                               class="sheet-skill-temp sheet-<% name %>-temp"
+                               value="0" />
+                    </div><!-- sheet-<% name %>-temp-cell -->
+
+                    <div class="sheet-table-cell sheet-skill-total-cell sheet-<% name %>-total-cell">
+                        <input name="attr_<% name %>Total" 
+                               type="number" 
+                               class="sheet-skill-total sheet-<% name %>-total"
+                               value="(@{<% name %>}+@{<% name %>Temp}+@{<% attribute %>Mod})" 
+                               disabled="disabled" />
+                    </div><!-- sheet-<% name %>-total-cell -->
+
+                    <div class="sheet-table-cell sheet-skill-roll-cell sheet-<% name %>-roll-cell">
+                        <button name="roll_<% name %>Check" 
+                                type="roll" 
+                                value="&{template:default} {{name=<% name %>}} {{roll=[[ ( @{<% attribute %>Affinity} + @{<% name %>Total} ) ]] }}" 
+                                title="<% description %>" 
+                                class="sheet-skill-roll-button sheet-roll-button sheet-<% name %>-roll-button">
+                        </button>
+                    </div><!-- sheet-<% name %>-roll-cell -->
+
+                </div><!-- <% name %>-row -->
+                <% /skills %>
+                
+                <div class="sheet-table-row">
+                    <div class="sheet-table-cell"></div>
+                    <div class="sheet-table-cell">
+                        <span class="sheet-spentpoints-label">CP Spent:</span>
+                    </div>
+                    <div class="sheet-table-cell">
+                        <input name="attr_PointsSpent" 
+                               type="number" 
+                               value="(<%#skills%>@{<% name %>Points} + <%/skills%>0)" 
+                               class="sheet-spentpoints" 
+                               disabled="disabled" />
+                    </div>
+                </div>
+
+                <div class="sheet-table-row">
+                    <div class="sheet-table-cell"></div>
+                    <div class="sheet-table-cell">
+                        <span class="sheet-unspentpoints-label">CP Remaining:</span>
+                    </div>
+                    <div class="sheet-table-cell">
+                        <input name="attr_UnspentPoints" 
+                               type="number" 
+                               value="(@{CharacterPoints} - @{PointsSpent})" 
+                               class="sheet-spentpoints" 
+                               disabled="disabled" />
+                    </div>
+                </div>
+
+            </div><!-- table trait-table -->
+        </div><!-- trait-col -->
+    </div>
+</div>
