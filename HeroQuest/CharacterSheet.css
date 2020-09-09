@@ -1,0 +1,96 @@
+@font-face {
+	font-family: "RomicStd";
+	font-style: normal;
+	src: url('https://fonts.googleapis.com/css?family=Germania+One');
+}
+
+.sheet-table {
+    display:table;
+}
+
+.sheet-table-row {
+    display:table-row;
+    padding:10px 0 10px 0;
+}
+
+.sheet-table-cell {
+    display:table-cell;
+    padding:0 20px 0 20px;
+}
+
+.sheet-region-name input {
+    border:none;
+    background:none;
+    font-size:24pt;
+    font-family:RomicStd;
+    padding:0;
+    color:#4D2B2E;
+}
+
+.charsheet input.sheet-die-input[type=number] {
+    height:48px;
+    width:64px;
+    font-family:RomicStd;
+    text-align:center;
+    font-size:14pt;
+    border:solid 1px #4D2B2E;
+    margin:10px 0 0 0 ;
+    color:#4D2B2E;
+}
+
+.sheet-roll-button {
+    height:48px;
+    width:64px;
+    background: #D2CAC8;
+    color:#4D2B2E;
+    border:solid 1px #4D2B2E;
+}
+
+.repcontrol_add,
+.repcontrol_edit {
+    background: #D2CAC8;
+    color:#4D2B2E;
+    border:solid 1px #4D2B2E;
+    float:none !important;
+}
+
+.sheet-roll-button:hover {
+    color:red;
+}
+
+.sheet-roll-button::before {
+    display:none;
+}
+
+.sheet-open-input {
+    border:none;
+    font-family:RomicStd;
+    font-size:16px;
+    color:#4D2B2E;
+}
+
+.sheet-gold-cell {
+    width:200px;
+}
+
+.sheet-gold {
+    height:96px    !important;
+    width:128px    !important;
+    font-size:24pt !important;
+}
+
+.sheet-open-input:hover,
+.sheet-open-input:focus {
+   border:solid 1px #4D2B2E;
+}
+
+.charsheet td {
+    text-align:center;
+}
+
+.sheet-label {
+    font-size:20pt;
+    color:#4D2B2E;
+    font-family:RomicStd;
+    font-weight:bold;
+}

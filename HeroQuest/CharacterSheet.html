@@ -1,0 +1,103 @@
+<div class="">
+    <div class="header">
+        <span class="label">Character</span>
+        <input name="attr_character_name" type="text" disabled="disabled">
+    </div>
+    <div class="sheet-table">
+        <div class="sheet-table-row">
+            <div class="sheet-table-cell">
+                <label>Body Points</label>
+            </div>
+            <div class="sheet-table-cell">
+                <label>Mind Points</label>
+            </div>
+            <div class="sheet-table-cell">
+                <label>Movement</label>
+            </div>
+        </div>
+        <div class="sheet-table-row">
+            <div class="sheet-table-cell">
+                <input name="attr_Body" type="number" />/
+                <input name="attr_Body_max" type="number" min="0" />
+            </div>
+            <div class="sheet-table-cell">
+                <input name="attr_Body" type="number" />/
+                <input name="attr_Body_max" type="number" min="0" />
+            </div>
+            <div class="sheet-table-cell">
+                <input name="attr_Move" type="number" min="0" value="2" />
+                <button type="roll" value="/r @{Move}d6"></button>
+            </div>
+        </div>
+    </div>
+    <div class="sheet-table">
+        <div class="sheet-table-row">
+            <div class="sheet-table-cell">
+                <label>Weapon</label>
+            </div>
+            <div class="sheet-table-cell" >
+                <span>Atk. Dice</span>
+            </div>
+            <div class="sheet-table-cell">
+                <label>Armor</label>
+            </div>
+            <div class="sheet-table-cell" >
+                <span>Def. Dice</span>
+            </div>
+            <div class="sheet-table-cell">
+                
+            </div>
+        </div>
+        <div class="sheet-table-row">
+            <div class="sheet-table-cell">
+                <input name="attr_WeaponName" type="text" />
+            </div>
+            <div class="sheet-table-cell">
+                <input name="attr_WeaponDice" type="number" value="1" min="1" />
+                <button type="roll" value="/r @{WeaponDice}t[SkullDice]" ></button>
+            </div>
+
+            <div class="sheet-table-cell">
+                <input name="attr_ArmorName" type="text" />
+            </div>
+            <div class="sheet-table-cell">
+                <input name="attr_ArmorDice" type="number" value="1" min="1" />
+                <button type="roll" value="/r @{ArmorDice}t[SkullDice]" ></button>
+            </div>
+            <div class="sheet-table-cell">
+                   
+            </div>
+        </div>
+    </div>
+    <div class="sheet-table">
+        <div class="sheet-table-row">
+            <div class="sheet-table-cell">
+                <label>Treasure/ Gear</label>
+            </div>
+            <div class="sheet-table-cell">
+                    <label>Quest Goals</label>
+            </div>
+        </div>
+        <div class="sheet-table-row">
+            <div class="sheet-table-cell">
+                <div>
+                    <input name="attr_Gold" type="number" value="0" />
+                    <span>Gold</span>
+                </div>
+                <div>
+                    <fieldset name="repeating_Tresure">
+                        <input name="attr_TreasureName" type="text" />
+                        <input name="attr_TreasureQuantity" type="number" value="1" />
+                    </fieldset>
+                </div>
+            </div>
+            <div class="sheet-table-cell">
+                <fieldset name="repeating_QuestGoal">
+                    <input name="attr_QuestGoalName" type="text" />
+                    <input name="attr_QuestGoalComplete" type="checkbox" />
+                </fieldset>
+            </div>
+        </div>
+        
+    </div>
+</div>
