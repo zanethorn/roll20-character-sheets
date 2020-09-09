@@ -1,0 +1,53 @@
+<div>
+    <div class="sheet-name-container">
+        <h3>Voice/ Player Name</h3>
+        <input type="text" name="attr_character_name" class="sheet-name" />
+    </div>
+
+    <div class="sheet-skills">
+        <div class="sheet-skills-table">
+            <div class="sheet-skills-row">
+                <div class="sheet-skills-cell">
+                </div>
+                <div class="sheet-skills-cell">
+                    <span class="sheet-skill-label">Unskilled</span>
+                </div>
+                <div class="sheet-skills-cell">
+                    <button name="roll_Unskilled" type="roll" value="&{template:default} {{name=Unskilled Roll}} {{roll=[[ ( d6 ) ]] }} {{target=[[6]]}}"></button>
+                </div>
+            </div>
+
+            <div class="sheet-skills-row">
+                <div class="sheet-skills-cell">
+                    Skill 1
+                </div>
+                <div class="sheet-skills-cell">
+                    <input name="attr_Skill1" type="text" />
+                </div>
+                <div class="sheet-skills-cell">
+                    <button name="roll_Skill1" type="roll" value="&{template:default} {{name=Skill1: @{Skill1}}} {{roll=[[ ( d6 ) ]] }} {{target=[[3]]}}"></button>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+</div>
+
+<rolltemplate class="sheet-rolltemplate-default">
+    <div>
+        <div class="sheet-rolltemplate-roll">
+            <span class="sheet-rolltemplate-roll-label">{{name}}:</span>
+            <span class="sheet-rolltemplate-roll-value">{{roll}}</span>
+        </div>
+        <div class="sheet-rolltemplate-outcome">
+            {{#rollLess() roll target}}
+            <span>Roll Failed!</span>
+            {{/rollLess() roll target}} {{#^rollLess() roll target}}
+            <span>Roll Succeeded!</span>
+            {{/^rollLess() roll target}}
+        </div>
+    </div>
+</rolltemplate>
